@@ -1,6 +1,6 @@
 # Validation
 
-An Idris port of the `Validation` and `AccValidation` types from the **Haskell** `validation` package (Hackage package [**here**] [hackage-validation]) by Tony Morris.
+An Idris port of the `Validation` and `AccValidation` types from the **Haskell** `validation` package (Hackage package [**here**] [hackage-validation]) by Tony Morris and Nick Partridge.
 
 In Tony's words:
 
