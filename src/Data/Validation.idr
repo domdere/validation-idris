@@ -1,18 +1,10 @@
 module Data.Validation
 
+import Verified
+
 -- the typeclass
 class Validate (v : Type -> Type -> Type) where
     total foldValidation : (e -> b) -> (a -> b) -> v e a -> b
-
-class Functor f => VerifiedFunctor (f : Type -> Type) where
-    total mapIdentity : (fa : f a) -> map id fa = fa
-    total mapComposition : (fa : f a) -> (k : b -> c) -> (g : a -> b) -> (map k . map g) fa = map (k . g) fa
-
-class Applicative f => VerifiedApplicative (f : Type -> Type) where
-    total applicativePureId : (v : f a) -> (pure id) <$> v = v
-    total applicativeComposition : (u : f (b -> c)) -> (v : f (a -> b)) -> (w : f a) -> pure (.) <$> u <$> v <$> w = u <$> (v <$> w)
-    total applicativeHomomorphism : (k : a -> b) -> (x : a) -> pure k <$> pure x = pure (k x)
-    total applicativeInterchange : (u : f (a -> b)) -> (y : a) -> (u <$> (pure y)) = ((pure ((flip id) y)) <$> u)
 
 -- This is pretty much the Either type
 

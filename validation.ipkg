@@ -1,5 +1,6 @@
 package validation
 
 modules =   Data.Validation
+        ,   Verified
 
 sourcedir = src
